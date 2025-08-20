@@ -1,7 +1,7 @@
 
-class S2 extends Phaser.Scene {
+class Scenc2 extends Phaser.Scene {
     constructor(){
-        super({ key: "playgame",
+        super({ key: "Scenc2",
             physics: {
                 default: "arcade",
                 arcade: {
@@ -55,7 +55,7 @@ class S2 extends Phaser.Scene {
         // When clicked → go to next scene
         nextButton.on("pointerdown", () => {
             h1.style.visibility = 'visible';
-            this.scene.start("bootGame");
+            this.scene.start("Scenc1");
         });
     }
     update(){

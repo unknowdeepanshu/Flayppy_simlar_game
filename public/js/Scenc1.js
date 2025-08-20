@@ -1,12 +1,11 @@
 let h1 = document.getElementById("score");
 var gameover = true;
-h1.style.visibility = 'visible';
 var score = 0;
 // Create a new Phaser game instance
-class bootGame extends Phaser.Scene {
+class Scenc1 extends Phaser.Scene {
         constructor() { 
         super({
-            key: "bootGame",
+            key: "Scenc1",
             physics: {
                 default: "arcade",
                 arcade: {
