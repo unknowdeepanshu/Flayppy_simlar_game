@@ -1,4 +1,4 @@
-how to run in this localy 
+How to run in this locally 
 
 Step 1:
 Download fisrt this file 
