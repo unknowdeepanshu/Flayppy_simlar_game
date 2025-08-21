@@ -124,7 +124,8 @@ hitTile(player, tile) {
     player.anims.pause();
 
     // Optional: show text
-    this.add.text(400, 300, "Game Over", { fontSize: "48px", fill: "#ff0000" }).setOrigin(0.5).setDepth(8);
+    this.add.text(400, 300, "Game Over", { fontSize: "48px", fill: "#ff0000",backgroundColor:"#fffb00ff" }).setOrigin(0.5).setDepth(8);;
+
 }
 scoreBoard(tile) {
     let numbre=tile.x
@@ -172,7 +173,6 @@ movePlayer() {
     }
     Touch(){
         this.player.setVelocityY(-100);
-            this.player.angle = -30;
     }
 }
 
