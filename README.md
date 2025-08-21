@@ -16,9 +16,3 @@ Run this command
 step 4:
 Open any browser 
 open this URL:http://localhost:8080
-
-When you check this 
-Need to wait 30s-1min to Render this website so (Also Refresh page to load) 
-Live WEBSITE 
-
-https://flayppy-simlar-game.onrender.com/
