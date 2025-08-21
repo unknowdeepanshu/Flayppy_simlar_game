@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+
 let h1 = document.getElementById("score");
 var gameover = true;
 var score = 0;

@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+
 class Scenc2 extends Phaser.Scene {
     constructor(){
         super({ key: "Scenc2",

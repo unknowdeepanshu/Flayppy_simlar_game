@@ -3,7 +3,7 @@ const config ={
     type: Phaser.AUTO,
     width: 800,
     height: 600,
-    scene: [ S2,bootGame],
+    scene: [ Scenc2, Scenc1],
     backgroundColor: "#eeeeee",
     Physics: {
         default: "arcade",
