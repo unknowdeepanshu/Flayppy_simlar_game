@@ -8,6 +8,7 @@ open this file in any code editor
 
 Step 3:
 Run this command
+ 
   npm install
 
   npm start
