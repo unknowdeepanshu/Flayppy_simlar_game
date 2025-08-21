@@ -51,6 +51,7 @@ class Scenc2 extends Phaser.Scene {
 
         // Make it interactive
         nextButton.setInteractive({ useHandCursor: true });
+    
 
         // When clicked → go to next scene
         nextButton.on("pointerdown", () => {

@@ -42,9 +42,13 @@ class Scenc1 extends Phaser.Scene {
         // Add layers (names must match what you created in Tiled)
         
         this.tile = this.physics.add.group({ allowGravity: false, immovable: true });
-        
-        this.layer2 = map.createLayer("cloud", tileset2, 0, 0);
-        this.layer3 = map.createLayer("cloud1", tileset2, 0, 0);
+        this.layer2 = map.createLayer("cloud", tileset2, 0, 0).setInteractive({ useHandCursor: true }).on("pointerdown", () => {
+            h1.style.visibility = 'visible';
+            this.Touch()
+        });
+        this.layer3 = map.createLayer("cloud1", tileset2, 0, 0).setInteractive({ useHandCursor: true }).on("pointerdown", () => {
+            this.Touch()
+        });
         //tiles up and down
         this.upTile = this.tile.create(900,600,"upTile");
         this.upTile.setScale(0.25).setDepth(5).setImmovable(true).refreshBody();
@@ -66,7 +70,7 @@ class Scenc1 extends Phaser.Scene {
         this.downTile3 = this.tile.create(1500,75,"downTile")
         this.downTile3.setScale(0.5).setDepth(5).setImmovable(true).refreshBody();
         // Create new pair
-        this.layer1 = map.createLayer("background", tileset1, 0, 0);
+        this.layer1 = map.createLayer("background", tileset1, 0, 0).setInteractive({ useHandCursor: true });;
         // Add player 
         this.player = this.physics.add.sprite(200, 300, "Fly");
         this.player.setScale(1.5).setDepth(10);
@@ -165,6 +169,10 @@ movePlayer() {
             this.player.setVelocityY(160);
             this.player.angle = 30;
         }
+    }
+    Touch(){
+        this.player.setVelocityY(-100);
+            this.player.angle = -30;
     }
 }
 
