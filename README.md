@@ -8,11 +8,15 @@ open this file in any code editor
 
 Step 3:
 Run this command
+
  //First command
   npm install
+
  //Second command
   npm start
 
 step 4:
 Open any browser 
-open this URL:http://localhost:8080
+open this URL:
+
+http://localhost:8080
