@@ -10,9 +10,11 @@ Step 3:
 Run this command
 
  //First command
+  
   npm install
 
  //Second command
+  
   npm start
 
 step 4:
