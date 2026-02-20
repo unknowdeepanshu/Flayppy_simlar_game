@@ -3,7 +3,13 @@
 Follow these steps to clone, install, and run the **Flayppy Bird web based game**  project.
 
 ---
+Tech stack 
 
+- **Phaser.**
+- **express.**
+- **nodemon.**
+
+---
 ### 🧩 Step 1: Clone the Repository
 Clone the repository from GitHub to your local machine.
 ```bash
