@@ -102,6 +102,9 @@ class Scenc1 extends Phaser.Scene {
 
     //button
     this.keyButton = this.input.keyboard.createCursorKeys();
+    this.enterKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER,
+    );
   }
 
   update() {
@@ -117,6 +120,12 @@ class Scenc1 extends Phaser.Scene {
       this.moveTile(this.upTile2, this.downTile2, 3);
       this.moveTile(this.upTile3, this.downTile3, 3);
     }
+    if (!gameover) {
+      if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
+        gameover = true;
+        this.scene.restart();
+      }
+    }
     // //score boared
     this.scoreBoard(this.downTile);
     this.scoreBoard(this.downTile1);
@@ -125,7 +134,7 @@ class Scenc1 extends Phaser.Scene {
   }
   hitTile(player, tile) {
     gameover = false;
-    console.log("Player hit tile, game paused!");
+    // console.log("Player hit tile, game paused!");
 
     // Pause physics (all movement stops)
     this.physics.pause();
@@ -134,7 +143,7 @@ class Scenc1 extends Phaser.Scene {
     player.setTint(0xff0000);
     player.anims.pause();
 
-    // Add a text button
+    // Add button to restart the game
     let restartButton = this.add
       .text(400, 300, "Game Over", {
         fontSize: "32px",
@@ -145,23 +154,16 @@ class Scenc1 extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(8);
 
-    // Make it interactive
     restartButton.setInteractive({ useHandCursor: true });
-
-    // When clicked → go to next scene
-    restartButton.on(
-      "pointerup",
-      () => {
-        gameover = true;
-        this.scene.restart();
-      },
-      this,
-    );
+    restartButton.on("pointerup", () => {
+      gameover = true;
+      this.scene.restart();
+    });
   }
 
   scoreBoard(tile) {
     let numbre = tile.x;
-    console.log(numbre);
+    // console.log(numbre);
     if (tile.x <= 201 && tile.x >= 196) {
       score += 10;
       h1.innerHTML = "Score: " + score;
@@ -176,7 +178,7 @@ class Scenc1 extends Phaser.Scene {
     if (tiles1.x < valueX && tiles2.x < valueX) {
       this.resetTile1(tiles1, tiles2); // create new pair
     }
-    console.log("Tile moved to x: " + tiles1.x);
+    // console.log("Tile moved to x: " + tiles1.x);
   }
   resetTile1(tile, tile1) {
     let y1 = Math.floor(Math.random() * 100);
@@ -207,4 +209,4 @@ class Scenc1 extends Phaser.Scene {
     this.player.setVelocityY(-100);
   }
 }
-console.log("Scenc1 loaded");
+// console.log("Scenc1 loaded");

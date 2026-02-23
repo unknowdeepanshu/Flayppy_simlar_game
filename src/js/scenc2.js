@@ -29,7 +29,6 @@ class Scenc2 extends Phaser.Scene {
   }
   create() {
     let h1 = document.getElementById("score");
-    h1.style.visibility = "hidden";
     // map creation
     const map = this.make.tilemap({ key: "map" });
     // Match the "Name" field you set in Tiled with the key you loaded here
@@ -58,11 +57,17 @@ class Scenc2 extends Phaser.Scene {
 
     // When clicked → go to next scene
     nextButton.on("pointerdown", () => {
-      h1.style.visibility = "visible";
       this.scene.start("Scenc1");
     });
+
+    this.enterKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER,
+    );
   }
   update() {
     this.player.setCollideWorldBounds(true);
+    if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
+      this.scene.start("Scenc1");
+    }
   }
 }

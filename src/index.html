@@ -9,25 +9,22 @@
             margin: 0rem;
             padding: 0rem;
         }
-
-        .check {
-            position: absolute;
-            top: 0rem;
-            left: 0rem;
-        }
     </style>
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Flappy Game</title>
 </head>
 
-<body>
-    <h1 id="score">Score: 0</h1>
-    <div class="check">
-        <script src="/phaser/phaser.js"></script>
-
-        <script src="js/Scenc1.js"></script>
-        <script src="js/scenc2.js"></script>
-        <script src="js/game.js"></script>
+<body class="bg-gray-900">
+    <div class="flex justify-center flex-col items-center h-screen w-screen overflow-hidden">
+        <h1 id="score" class="text-2xl font-bold text-white">Score: 0</h1>
+        <div class="border-10 rounded-lg border-gray-600" id="game-container">
+        </div>
     </div>
+    <script src="/phaser/phaser.js"></script>
+
+    <script src="js/Scenc1.js"></script>
+    <script src="js/scenc2.js"></script>
+    <script src="js/game.js"></script>
 
 </body>
 
