@@ -123,6 +123,9 @@ class Scenc1 extends Phaser.Scene {
     if (!gameover) {
       if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
         gameover = true;
+
+        score = 0;
+        h1.innerHTML = "Score: " + score;
         this.scene.restart();
       }
     }
@@ -157,12 +160,14 @@ class Scenc1 extends Phaser.Scene {
     restartButton.setInteractive({ useHandCursor: true });
     restartButton.on("pointerup", () => {
       gameover = true;
+      score = 0;
+      h1.innerHTML = "Score: " + score;
       this.scene.restart();
     });
   }
 
   scoreBoard(tile) {
-    let numbre = tile.x;
+    // let numbre = tile.x;
     // console.log(numbre);
     if (tile.x <= 201 && tile.x >= 196) {
       score += 10;
